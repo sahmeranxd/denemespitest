@@ -1,12 +1,12 @@
 export default async function handler(req, res) {
   const { ad, soyad, il } = req.query;
 
-  if (!ad  !soyad  !il) {
+  if (!ad || !soyad || !il) {
     return res.status(400).json({ message: "ad, soyad ve il gerekli" });
   }
 
   try {
-    const apiUrl = http://api.prymx.fun/apiler/adsoyad.php?ad=${ad}&soyad=${soyad}&il=${il};
+    const apiUrl = `https://api.hexnox.pro/sowixapi/adsoyadilce.php?ad=${ad}&soyad=${soyad}&il=${il}`;
     const r = await fetch(apiUrl);
     const data = await r.json();
     res.status(200).json(data);
